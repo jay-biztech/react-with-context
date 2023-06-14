@@ -1,12 +1,12 @@
-import Profile from '../src/components/Profile';
 import './App.css';
+import Dashboard from './components/Dashboard';
 import Context from './context';
 
 function App() {
   return (
     <div>
       <Context.Provider value={{ name: 'Jay', age: 28 }}>
-        <Profile />
+        <Dashboard />
       </Context.Provider>
     </div>
   );
