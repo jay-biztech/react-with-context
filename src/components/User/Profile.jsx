@@ -2,6 +2,8 @@ import { useContext, useEffect } from 'react';
 import UserContext, { UserDispatchContext } from '../../context';
 
 export default function Profile() {
+  console.log('Profile');
+
   const { name, age } = useContext(UserContext);
   const setUserDetails = useContext(UserDispatchContext);
 

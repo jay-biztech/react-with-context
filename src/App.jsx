@@ -4,6 +4,8 @@ import Dashboard from './components/Dashboard';
 import UserContext, { UserDispatchContext } from './context';
 
 function App() {
+  console.log('App');
+
   const [userDetails, setUserDetails] = useState({
     name: 'Jay',
     age: 28,
