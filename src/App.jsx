@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard';
-import Context from './context';
+import UserContext, { UserDispatchContext } from './context';
 
 function App() {
+  const [userDetails, setUserDetails] = useState({
+    name: 'Jay',
+    age: 28,
+  });
+
   return (
     <div>
-      <Context.Provider value={{ name: 'Jay', age: 28 }}>
-        <Dashboard />
-      </Context.Provider>
+      <UserContext.Provider value={userDetails}>
+        <UserDispatchContext.Provider value={setUserDetails}>
+          <Dashboard />
+        </UserDispatchContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }

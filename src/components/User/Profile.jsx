@@ -1,8 +1,15 @@
-import { useContext } from 'react';
-import Context from '../../context';
+import { useContext, useEffect } from 'react';
+import UserContext, { UserDispatchContext } from '../../context';
 
 export default function Profile() {
-  const { name, age } = useContext(Context);
+  const { name, age } = useContext(UserContext);
+  const setUserDetails = useContext(UserDispatchContext);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setUserDetails({ name: 'Jay Parmar', age: 28 });
+    }, 3000);
+  }, []);
 
   return (
     <div>
